@@ -1,5 +1,6 @@
 # CreateTaskSet with Load balancers
 Normal -- Represents TaskSets without Load balancer
+
 LB -- Represents TaskSet with Load balancer
 
 ------------------------------------
@@ -21,4 +22,5 @@ LB - Normal -- > LB works (however it remain in STABILIZING) -- > Normal remain 
 Normal - LB - Normal -- > Normal works reached STEADY_STATE -- > LB remain stuck in STABILIZING -- > Normal remain stuck in STABILIZING
 
 LB - Normal - LB -- > LB works (however it remain in STABILIZING) -- > Normal remain stuck in STABILIZING -- > LB remain stuck in STABILIZING
+
 ------------------------------------

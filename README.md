@@ -1,9 +1,18 @@
 # CreateTaskSet with Load balancers
+
+It looks like that Mix type of TaskSets (Normal + LB) in the single service causes all the TaskSets are coming up later after the first one in the sequence shows tendency to fail and remain such in STABILIZING and never goes about deploying tasks. It does not matter if you make taskset as primary or not.
+
+Here are my test results  : 
+
+https://github.com/git4example/CreateTaskSetWithLB
+
+------------------------------------
+
 Normal -- Represents TaskSets without Load balancer
 
 LB -- Represents TaskSet with Load balancer
 
-------------------------------------
+
 Normal -- > It works and reached STEADY_STATE
 
 LB -- > It works and reached STEADY_STATE

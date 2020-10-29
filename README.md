@@ -15,6 +15,9 @@ Normal - Normal -- > Both works and reached STEADY_STATE
 
 Normal - LB -- > Normal works reached STEADY_STATE -- > LB remain stuck in STABILIZING
 
+Normal (Primary) - LB -- > Normal works reached STEADY_STATE -- > LB remain stuck in STABILIZING
+Normal - LB (Primary) -- > Normal works reached STEADY_STATE -- > LB remain stuck in STABILIZING
+
 LB - Normal -- > LB works (however it remain in STABILIZING) -- > Normal remain stuck in STABILIZING
 
 

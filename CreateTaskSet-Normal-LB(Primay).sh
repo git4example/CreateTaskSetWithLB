@@ -2,7 +2,7 @@
 
 # set these values to resources that exist in your account:
 cluster_name=default
-service_name=TaskSetTesting-Normal-LB
+service_name=TaskSetTesting-Normal-LB-2
 desired_count=2   #if you are scaling to different number then please update calculation to accommodate % calculation which should no more then 10 in on go.
 maximum_Percent=200
 minimum_HealthyPercent=100 
@@ -61,7 +61,6 @@ runningCount="$(echo $task_set_out | jq .taskSets[0].runningCount)"
 
 echo "stabilityStatus :" $stabilityStatus " computedDesiredCount :" $computedDesiredCount " total :" $total " (pendingCount :" $pendingCount "runningCount :" $runningCount ") - POST-CREATE" | ts
 
-
 sleep 5
 
 #Create TaskSet with LB
@@ -101,6 +100,7 @@ runningCount="$(echo $task_set_out | jq .taskSets[0].runningCount)"
 
 echo "stabilityStatus :" $stabilityStatus " computedDesiredCount :" $computedDesiredCount " total :" $total " (pendingCount :" $pendingCount "runningCount :" $runningCount ") - POST-CREATE" | ts
 
+aws ecs update-service-primary-task-set --cluster default  --service $service_name --primary-task-set $task_set_id
 
 echo "Deploymnet Finished.." | ts
 
